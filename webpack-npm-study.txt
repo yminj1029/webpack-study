@@ -38,4 +38,31 @@ devDependencies?
 2) cdn을 사용할 경우 웹페이지에서 찾아 가져오는 경우보다 npm으로 설치했을 때 편리하다.
 
 
+script : 커스텀 명령어 실행 할 수 있다.
 
+build:webpack
+- mode? development, production, none 설정. 모드 설정 안 하면 난독화 된다.
+- entry, output 설정 가능
+- option을 한 줄로 추가해서 관리하기 어려움
+    ex) webpack --mode=none --entry=src/index.js --output=public/output.js .... 
+- webpack 설정 파일을 사용함
+    ex) module.exports = {
+        mode : 'none',
+        entry : 'src/index.js',
+        output : 'public/output.js'
+    };
+
+lodash join api
+
+웹팩 : js 파일을 하나로 합쳐서 리소스가 줄어들 수 있다. 
+리퀘스트 파일 수가 줄어듬.
+
+즉시실행 함수:
+    ex)
+    (function () {
+        statements
+    })();
+- 즉시 실행 함수 표현(IIFE, Immediately Invoked Function Expression)
+- 정의되자마자 즉시 실행되는 Javascript Function 를 말한다.
+- 표현 내부의 변수는 외부로부터의 접근이 불가능하다.
+- IIFE를 변수에 할당하면 IIFE 자체는 저장되지 않고, 함수가 실행된 결과만 저장된다.
